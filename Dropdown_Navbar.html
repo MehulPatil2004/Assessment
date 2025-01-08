@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar With Dropdown</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        header {
+            background-color: #240fdf;
+        }
+
+        .box-layout {
+            padding: 0 10px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+        }
+
+        .logo img {
+            max-height: 40px;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav span {
+            position: relative;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        .nav span:hover {
+            background-color: black;
+        }
+
+        .nav span a {
+            font-size: 18px;
+        }
+
+        .dropdown-menu,
+        .dropdown-menu2 {
+            display: none;
+            position: absolute;
+            background-color: #575757;
+            padding: 15px;
+            border-radius: 5px;
+            top: 40px;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .dropdown-menu2 {
+            top: 0;
+            left: 130px;
+
+        }
+
+        .dropdown:hover .dropdown-menu,
+        .dropdown2:hover .dropdown-menu2 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dropdown-menu span,
+        .dropdown-menu2 span {
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: white;
+            border: 1px solid #240fdf;
+            color: #240fdf;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="box-layout">
+            <div class="navbar">
+                <!-- Logo Section -->
+                <div class="logo">
+                    <h1>
+                        <a href="#"><img src="" alt="logo"></span></a>
+                    </h1>
+                </div>
+
+                <!-- Navigation Section -->
+                <div class="nav">
+                    <span><a href="#">Home</a></span>
+                    <span><a href="#">About</a></span>
+                    <span class="dropdown">
+                        <a href="#">Services <i class="fa-solid fa-angle-down"></i></a>
+                        <div class="dropdown-menu">
+                            <span><a href="#">Web Design</a></span>
+                            <span><a href="#">Marketing</a></span>
+                            <span><a href="#">WordPress</a></span>
+                            <span class="dropdown2">
+                                <a href="#">More <i class="fa-solid fa-angle-right"></i></a>
+                                <div class="dropdown-menu2">
+                                    <span><a href="#">HTML</a></span>
+                                    <span><a href="#">CSS</a></span>
+                                    <span><a href="#">JavaScript</a></span>
+                                    <span><a href="#">jQuery</a></span>
+                                </div>
+                            </span>
+                        </div>
+                    </span>
+                    <span><a href="#">Blogs</a></span>
+                    <span><a href="#">Contact</a></span>
+                    <button type="button">Login</button>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+
+</html>
